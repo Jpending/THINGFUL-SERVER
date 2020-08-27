@@ -67,8 +67,8 @@ const ThingsService = {
     // Some light hackiness to allow for the fact that `treeize`
     // only accepts arrays of objects, and we want to use a single
     // object.
-    const thingData = thingTree.grow([ thing ]).getData()[0]
-
+    const thingData = thingTree.grow([thing]).getData()[0]
+    // console.log(thing)
     return {
       id: thingData.id,
       title: xss(thingData.title),
@@ -91,7 +91,7 @@ const ThingsService = {
     // Some light hackiness to allow for the fact that `treeize`
     // only accepts arrays of objects, and we want to use a single
     // object.
-    const reviewData = reviewTree.grow([ review ]).getData()[0]
+    const reviewData = reviewTree.grow([review]).getData()[0]
 
     return {
       id: reviewData.id,

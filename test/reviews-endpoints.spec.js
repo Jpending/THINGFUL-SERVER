@@ -31,7 +31,7 @@ describe('Reviews Endpoints', function () {
         db,
         testUsers,
         testThings,
-
+        testReviews
       )
     )
 

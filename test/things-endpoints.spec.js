@@ -3,7 +3,7 @@ const app = require('../src/app')
 const helpers = require('./test-helpers')
 const supertest = require('supertest')
 
-describe.only('Things Endpoints', function () {
+describe('Things Endpoints', function () {
   let db
 
   const {
@@ -34,8 +34,10 @@ describe.only('Things Endpoints', function () {
 
 
   describe(`Protected endpoints`, () => {
+
     beforeEach('insert articles', () =>
       helpers.seedThingsTables(
+
         db,
         testUsers,
         testThings,
@@ -242,7 +244,7 @@ describe.only('Things Endpoints', function () {
       )
 
       it('responds with 200 and the specified reviews', () => {
-        const thingId = 1
+        const thingId = testThings[1].id
         const expectedReviews = helpers.makeExpectedThingReviews(
           testUsers, thingId, testReviews
         )
