@@ -1,7 +1,7 @@
 const express = require('express')
 const path = require('path')
 const ReviewsService = require('./reviews-service')
-const { requireAuth } = require('../middleware/basic-auth')
+const { requireAuth } = require('../middleware/jwt-auth')
 const reviewsRouter = express.Router()
 const jsonBodyParser = express.json()
 
@@ -16,7 +16,6 @@ reviewsRouter
         return res.status(400).json({
           error: `Missing '${key}' in request body`
         })
-
     newReview.user_id = req.user.id
 
     ReviewsService.insertReview(
